@@ -1,0 +1,15 @@
+testSuiteName: Dmate Webshop UI Tests
+testDefaultTags: all
+
+variables:
+    - ../variables/global_variables.py
+
+resource:
+    - ../resources/keywords/common_keywords.robot
+
+
+testCases:
+    - tags: home, smoke, regression
+      name: home_tests.robot
+    - tags: login
+      name: login_tests.robot

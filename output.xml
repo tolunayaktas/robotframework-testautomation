@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.8 on win32)" generated="2024-12-23T15:25:30.237152" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="c:\Dev\git\New folder (2)\robot-automation\tests\login_tests.robot">
+<test id="s1-t1" name="Valid Login Test" line="22">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:30.504061" level="INFO">Opening browser 'chrome' to base url 'https://dmate.dmate.it/INTERSHOP/web/WFS/6662001970-6662001970WS-Site/it_IT/-/EUR/ViewUserAccount-ProcessLogin'.</msg>
+<arg>${LOGIN_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-23T15:25:30.504061" elapsed="3.217834"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-23T15:25:33.722879" elapsed="0.040468"/>
+</kw>
+<kw name="Click Accept Cookies" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:onetrust-accept-btn-handler</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-23T15:25:33.764399" elapsed="0.564647"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:34.329046" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
+<arg>id:onetrust-accept-btn-handler</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:34.329046" elapsed="0.111883"/>
+</kw>
+<status status="PASS" start="2024-12-23T15:25:33.764399" elapsed="0.676530"/>
+</kw>
+<kw name="Input Username And Password" owner="login_keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-23T15:25:39.443485" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-23T15:25:34.443002" elapsed="5.001249"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:39.445261" level="INFO">Typing text 'QMIT1-1' into text field '//div[@class='col-md-6']//input[@id='ShopLoginForm_Login']'.</msg>
+<arg>${INPUT_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:39.444251" elapsed="0.117808"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:39.562059" level="INFO">Typing text 'RonWell1234!' into text field '//div[@class='col-md-6']//input[@id='ShopLoginForm_Password']'.</msg>
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:39.562059" elapsed="0.097395"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2024-12-23T15:25:34.441993" elapsed="5.217461"/>
+</kw>
+<kw name="Click Login Button" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:39.661199" level="INFO">Clicking element 'css:div[class='col-md-offset-3 col-md-9'] button[name='login']'.</msg>
+<arg>${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:39.660200" elapsed="1.160946"/>
+</kw>
+<status status="PASS" start="2024-12-23T15:25:39.660200" elapsed="1.160946"/>
+</kw>
+<kw name="Verify Successful Login" owner="login_keywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:40.847196" level="INFO">Element '//span[normalize-space()='Il mio account']' is displayed.</msg>
+<arg>${MYACCOUNT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-23T15:25:40.824633" elapsed="0.022563"/>
+</kw>
+<status status="PASS" start="2024-12-23T15:25:40.824633" elapsed="0.022563"/>
+</kw>
+<kw name="Logout" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:40.848196" level="INFO">Clicking element '//span[normalize-space()='Il mio account']'.</msg>
+<arg>${MYACCOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:40.848196" elapsed="0.079584"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGOUT}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-23T15:25:40.928779" elapsed="0.237258"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-23T15:25:41.166037" level="INFO">Clicking element 'css:.my-account-logout'.</msg>
+<arg>${LOGOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-23T15:25:41.166037" elapsed="0.734386"/>
+</kw>
+<status status="PASS" start="2024-12-23T15:25:40.848196" elapsed="1.053223"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-23T15:25:41.901419" elapsed="2.163814"/>
+</kw>
+<status status="PASS" start="2024-12-23T15:25:30.503061" elapsed="13.564093"/>
+</test>
+<status status="PASS" start="2024-12-23T15:25:30.241153" elapsed="13.830018"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
