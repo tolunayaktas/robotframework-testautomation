@@ -3,6 +3,7 @@ Library           SeleniumLibrary
 Resource          ../resources/keywords/login_keywords.robot
 Resource          ../resources/keywords/home_keywords.robot
 Resource          ../variables/global_variables.robot
+Documentation    Tags in Robot Framework
 
 *** Test Cases ***
 

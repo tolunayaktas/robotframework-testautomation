@@ -7,4 +7,4 @@ test_files = [
 ]
 
 
-run(*test_files, include=["home"], output="output.xml", log="log.html", report="report.html")
+run(*test_files, include=["all"], output="output.xml", log="log.html", report="report.html")

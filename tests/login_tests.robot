@@ -2,6 +2,7 @@
 Library           SeleniumLibrary
 Resource          ../resources/keywords/login_keywords.robot
 Resource          ../variables/global_variables.robot
+Documentation    Tags in Robot Framework
 
 *** Variables ***
 ${SITE_URL}      https://dmate.dmate.it/
@@ -32,7 +33,7 @@ Valid Login Test
     Close Browser
 
 Validate Forgot Password Page
-    [Tags]    all, login, regression
+    [Tags]    all
     Open Browser    ${LOGIN_PAGE}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
