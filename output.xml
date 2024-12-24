@@ -1,91 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.8 on win32)" generated="2024-12-23T18:45:58.557714" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.8 on darwin)" generated="2024-12-24T11:12:08.881786" rpa="false" schemaversion="5">
 <suite id="s1" name="Login Tests">
-<suite id="s1-s1" name="Login Tests" source="C:\Dev\git\New folder (2)\robot-automation\tests\login_tests.robot">
-<test id="s1-s1-t1" name="Validate Forgot Password Page" line="35">
+<suite id="s1-s1" name="Login Tests" source="/Users/tolunayaktas/Documents/GIT/robotframework-testautomation/tests/login_tests.robot">
+<test id="s1-s1-t1" name="Invalid Login Test" line="13">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-23T18:45:58.922242" level="INFO">Opening browser 'chrome' to base url 'https://dmate.dmate.it/INTERSHOP/web/WFS/6662001970-6662001970WS-Site/it_IT/-/EUR/ViewUserAccount-ProcessLogin'.</msg>
+<msg time="2024-12-24T11:12:08.972866" level="INFO">Opening browser 'chrome' to base url 'https://dmate.dmate.it/INTERSHOP/web/WFS/6662001970-6662001970WS-Site/it_IT/-/EUR/ViewUserAccount-ProcessLogin'.</msg>
 <arg>${LOGIN_PAGE}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-23T18:45:58.922242" elapsed="5.397877"/>
+<status status="PASS" start="2024-12-24T11:12:08.972768" elapsed="2.261153"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-12-23T18:46:04.321117" elapsed="0.046039"/>
+<status status="PASS" start="2024-12-24T11:12:11.234342" elapsed="0.378710"/>
 </kw>
 <kw name="Click Accept Cookies" owner="login_keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:onetrust-accept-btn-handler</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-23T18:46:04.368181" elapsed="0.112045"/>
+<status status="PASS" start="2024-12-24T11:12:11.614320" elapsed="0.016578"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-12-23T18:46:04.481226" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
+<msg time="2024-12-24T11:12:11.631096" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
 <arg>id:onetrust-accept-btn-handler</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-23T18:46:04.480226" elapsed="0.104260"/>
+<status status="PASS" start="2024-12-24T11:12:11.630997" elapsed="0.036789"/>
 </kw>
-<status status="PASS" start="2024-12-23T18:46:04.368143" elapsed="0.216343"/>
+<status status="PASS" start="2024-12-24T11:12:11.613627" elapsed="0.054360"/>
+</kw>
+<kw name="Input Username And Password" owner="login_keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-24T11:12:16.669080" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-24T11:12:11.668533" elapsed="5.000642"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:16.669409" level="INFO">Typing text 'invalid_user' into text field '//div[@class='col-md-6']//input[@id='ShopLoginForm_Login']'.</msg>
+<arg>${INPUT_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T11:12:16.669278" elapsed="0.088049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:16.757601" level="INFO">Typing text 'invalid_pass' into text field '//div[@class='col-md-6']//input[@id='ShopLoginForm_Password']'.</msg>
+<arg>${INPUT_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T11:12:16.757462" elapsed="0.033408"/>
+</kw>
+<arg>invalid_user</arg>
+<arg>invalid_pass</arg>
+<status status="PASS" start="2024-12-24T11:12:11.668318" elapsed="5.122629"/>
+</kw>
+<kw name="Click Login Button" owner="login_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:16.791639" level="INFO">Clicking element 'css:div[class='col-md-offset-3 col-md-9'] button[name='login']'.</msg>
+<arg>${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T11:12:16.791492" elapsed="0.265087"/>
+</kw>
+<status status="PASS" start="2024-12-24T11:12:16.791074" elapsed="0.265637"/>
+</kw>
+<kw name="Verify Login Failed" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INVALID_LOGIN_ALERT}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-24T11:12:17.057439" elapsed="0.368416"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:17.430087" level="INFO">Element 'css:div[role='alert']' is displayed.</msg>
+<arg>${INVALID_LOGIN_ALERT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-24T11:12:17.425958" elapsed="0.004168"/>
+</kw>
+<status status="PASS" start="2024-12-24T11:12:17.057168" elapsed="0.373000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-24T11:12:17.430290" elapsed="0.072979"/>
+</kw>
+<tag>all</tag>
+<status status="PASS" start="2024-12-24T11:12:08.972346" elapsed="8.531064"/>
+</test>
+<test id="s1-s1-t2" name="Validate Forgot Password Page" line="35">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:17.503839" level="INFO">Opening browser 'chrome' to base url 'https://dmate.dmate.it/INTERSHOP/web/WFS/6662001970-6662001970WS-Site/it_IT/-/EUR/ViewUserAccount-ProcessLogin'.</msg>
+<arg>${LOGIN_PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-24T11:12:17.503736" elapsed="1.714878"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-24T11:12:19.218865" elapsed="0.373430"/>
+</kw>
+<kw name="Click Accept Cookies" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:onetrust-accept-btn-handler</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-24T11:12:19.593044" elapsed="0.017866"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-24T11:12:19.611109" level="INFO">Clicking button 'id:onetrust-accept-btn-handler'.</msg>
+<arg>id:onetrust-accept-btn-handler</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-24T11:12:19.611014" elapsed="0.038184"/>
+</kw>
+<status status="PASS" start="2024-12-24T11:12:19.592701" elapsed="0.056593"/>
 </kw>
 <kw name="Click Forgot Password" owner="login_keywords">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-23T18:46:07.586698" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-12-24T11:12:22.651672" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-23T18:46:04.585362" elapsed="3.001897"/>
+<status status="PASS" start="2024-12-24T11:12:19.649813" elapsed="3.001922"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${FORGOT_PASSWORD}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-23T18:46:07.587697" elapsed="0.036973"/>
+<status status="PASS" start="2024-12-24T11:12:22.651831" elapsed="0.008069"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-23T18:46:07.625670" level="INFO">Clicking element 'xpath:(//*[@class="btn btn-link forgot-pwd"])[2]'.</msg>
+<msg time="2024-12-24T11:12:22.660119" level="INFO">Clicking element 'xpath:(//*[@class="btn btn-link forgot-pwd"])[2]'.</msg>
 <arg>${FORGOT_PASSWORD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-23T18:46:07.625670" elapsed="0.600304"/>
+<status status="PASS" start="2024-12-24T11:12:22.659986" elapsed="0.541565"/>
 </kw>
-<status status="PASS" start="2024-12-23T18:46:04.585362" elapsed="3.640612"/>
+<status status="PASS" start="2024-12-24T11:12:19.649569" elapsed="3.552043"/>
 </kw>
 <kw name="Validate Forgot Password Page" owner="login_keywords">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-12-23T18:46:08.245970" level="INFO">Element '//h1[normalize-space()='Password dimenticata?']' is displayed.</msg>
+<msg time="2024-12-24T11:12:23.210405" level="INFO">Element '//h1[normalize-space()='Password dimenticata?']' is displayed.</msg>
 <arg>${FORGOT_PASSWORD_TEXT}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-23T18:46:08.226972" elapsed="0.018998"/>
+<status status="PASS" start="2024-12-24T11:12:23.201867" elapsed="0.008594"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-12-23T18:46:08.276970" level="INFO">Element '//p[contains(text(),'Inserisci il tuo nome utente e riceverai un’email,')]' is displayed.</msg>
+<msg time="2024-12-24T11:12:23.220891" level="INFO">Element '//p[contains(text(),'Inserisci il tuo nome utente e riceverai un’email,')]' is displayed.</msg>
 <arg>${FORGOT_PASSWORD_SECONDTEXT}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-12-23T18:46:08.245970" elapsed="0.031000"/>
+<status status="PASS" start="2024-12-24T11:12:23.210582" elapsed="0.010359"/>
 </kw>
-<status status="PASS" start="2024-12-23T18:46:08.225974" elapsed="0.050996"/>
+<status status="PASS" start="2024-12-24T11:12:23.201738" elapsed="0.019253"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-12-23T18:46:08.276970" elapsed="2.156126"/>
+<status status="PASS" start="2024-12-24T11:12:23.221087" elapsed="0.069930"/>
 </kw>
 <tag>all</tag>
-<status status="PASS" start="2024-12-23T18:45:58.921369" elapsed="11.513387"/>
+<tag>smoke</tag>
+<status status="PASS" start="2024-12-24T11:12:17.503555" elapsed="5.787637"/>
 </test>
 <doc>Tags in Robot Framework</doc>
-<status status="PASS" start="2024-12-23T18:45:58.598598" elapsed="11.839286"/>
+<status status="PASS" start="2024-12-24T11:12:08.895768" elapsed="14.395670"/>
 </suite>
-<status status="PASS" start="2024-12-23T18:45:58.558599" elapsed="11.884469"/>
+<status status="PASS" start="2024-12-24T11:12:08.882218" elapsed="14.409441"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">all</stat>
+<stat pass="2" fail="0" skip="0">all</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Tests">Login Tests.Login Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Login Tests">Login Tests.Login Tests</stat>
 </suite>
 </statistics>
 <errors>

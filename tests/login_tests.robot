@@ -11,7 +11,7 @@ ${LOGIN_PAGE}    https://dmate.dmate.it/INTERSHOP/web/WFS/6662001970-6662001970W
 *** Test Cases ***
 
 Invalid Login Test
-    [Tags]    all, login, regression
+    [Tags]    all    login    regression
     Open Browser    ${LOGIN_PAGE}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
@@ -22,7 +22,7 @@ Invalid Login Test
 
 
 Valid Login Test
-    [Tags]    all, login, smoke, regression
+    [Tags]    all    login    smoke    regression
     Open Browser    ${LOGIN_PAGE}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
@@ -33,7 +33,7 @@ Valid Login Test
     Close Browser
 
 Validate Forgot Password Page
-    [Tags]    all
+    [Tags]    all    smoke
     Open Browser    ${LOGIN_PAGE}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies

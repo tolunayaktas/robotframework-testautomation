@@ -8,7 +8,7 @@ Documentation    Tags in Robot Framework
 *** Test Cases ***
 
 Home Page Logo Validation
-    [Tags]    all, home, regression
+    [Tags]    all    home    regression
     Open Browser    ${SITE_URL}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
@@ -16,7 +16,7 @@ Home Page Logo Validation
     Close Browser
 
 Validate Carello Function That Require Signin    
-    [Tags]    all, home, regression 
+    [Tags]    all    home    regression    smoke
     Open Browser    ${SITE_URL}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
@@ -25,7 +25,7 @@ Validate Carello Function That Require Signin
     Close Browser
 
 Searching an Item With Title
-    [Tags]    all, home, regression
+    [Tags]    all    home    regression
     Open Browser    ${SITE_URL}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
