@@ -3,7 +3,8 @@ from robot import run
 
 test_files = [
     "tests/home_tests.robot",
-    "tests/login_tests.robot"
+    "tests/login_tests.robot",
+    "tests/footer_tests.robot"
 ]
 
 

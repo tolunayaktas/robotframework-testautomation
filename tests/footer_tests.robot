@@ -11,6 +11,7 @@ Documentation    Tags in Robot Framework
 *** Test Cases ***
 
 Contact Us Page Validation
+    [Tags]    all    footer    regression
     Open Browser    ${SITE_URL}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
@@ -19,6 +20,7 @@ Contact Us Page Validation
     Close Browser
 
 Control Cookie Settings Functions
+    [Tags]    all    footer    regression
     Open Browser    ${SITE_URL}    ${BROWSER}
     Maximize Browser Window
     Click Accept Cookies
